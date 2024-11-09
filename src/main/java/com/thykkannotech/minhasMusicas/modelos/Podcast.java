@@ -1,6 +1,6 @@
 package com.thykkannotech.minhasMusicas.modelos;
 
-public class Podcast extends Audio{
+public class Podcast extends Audio {
     private String apresentador;
     private String descricao;
 
@@ -20,4 +20,12 @@ public class Podcast extends Audio{
         this.descricao = descricao;
     }
 
+    @Override
+    public int getClassificacao() {
+        if (this.getTotalCurtidas() > 500) {
+            return 10;
+        } else {
+            return 8;
+        }
+    }
 }
